@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola-Mundo</title>
+    <style>
+        :root {
+            --bg: #f7f5f2;
+            --surface: #ffffff;
+            --text: #1f2933;
+            --muted: #52606d;
+            --accent: #0b6e4f;
+            --border: #d9e2ec;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, #e6fffa 0%, transparent 40%),
+                radial-gradient(circle at bottom right, #ebf8ff 0%, transparent 35%),
+                var(--bg);
+        }
+
+        main {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 3rem 1.25rem;
+        }
+
+        h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .lead {
+            margin: 0 0 2rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        a {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            padding: 0.9rem 1rem;
+            text-decoration: none;
+            color: var(--text);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.15s ease, transform 0.15s ease;
+        }
+
+        a:hover,
+        a:focus-visible {
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            outline: none;
+        }
+
+        a span {
+            color: var(--accent);
+            font-weight: 700;
+            min-width: 4.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Hola-Mundo</h1>
+        <p class="lead">Fundamentos de HTML, CSS y JavaScript. Elige una clase para empezar.</p>
+
+        <ol>
+            <li><a href="bases-html/index.html"><span>Clase 1</span> bases-html</a></li>
+            <li><a href="css-intro/index.html"><span>Clase 2</span> css-intro</a></li>
+            <li><a href="blog/index.html"><span>Clase 3</span> blog</a></li>
+            <li><a href="ejemplo-avanzado/index.html"><span>Clase 4</span> ejemplo-avanzado</a></li>
+            <li><a href="javascript-learn/index.html"><span>Clase 5</span> javascript-learn</a></li>
+            <li><a href="calculadora-exampler/index.html"><span>Clase 6</span> calculadora-exampler</a></li>
+            <li><a href="game-exampler/index.html"><span>Clase 7</span> game-exampler</a></li>
+        </ol>
+    </main>
+</body>
+
+</html>

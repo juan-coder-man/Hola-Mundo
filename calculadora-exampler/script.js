@@ -1,6 +1,6 @@
 let runningTotal = 0;
 let buffer = "0";
-let previousOperator;
+let previousOperator = null;
 const screen = document.querySelector(".screen");
 
 function buttonClick(value) {
@@ -45,7 +45,11 @@ function flushOperation(intBuffer) {
     runningTotal -= intBuffer;
   } else if (previousOperator === "×") {
     runningTotal *= intBuffer;
-  } else {
+  } else if (previousOperator === "÷") {
+    if (intBuffer === 0) {
+      runningTotal = 0;
+      return;
+    }
     runningTotal /= intBuffer;
   }
 }
@@ -55,6 +59,7 @@ function handleSymbol(value) {
     case "C":
       buffer = "0";
       runningTotal = 0;
+      previousOperator = null;
       break;
     case "=":
       if (previousOperator === null) {
@@ -63,7 +68,7 @@ function handleSymbol(value) {
       }
       flushOperation(parseInt(buffer));
       previousOperator = null;
-      buffer = +runningTotal;
+      buffer = String(runningTotal);
       runningTotal = 0;
       break;
     case "←":
